@@ -1,0 +1,50 @@
+.lien-tabs-wrapper{
+    .nav-item{
+        position: relative;
+        i{
+            position: absolute;
+            right: 0px;
+        }
+        .fa{
+            &:hover{
+                font-size: 17px;
+            }
+        }
+        .nav-link{
+            border-color: #e9ecef #e9ecef #dee2e6;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            border-style: solid;
+            border-width: 3px 1px 1px;
+            border-radius: 3px 3px 0 0;
+            .tab-text{
+                font-size: 10px;
+                text-align: center;
+                font-weight: 600;
+                background-color: #28a745;
+                color: #fff;
+            }
+        }
+        .nav-link.active{
+            border-top-color: #28a745;
+        }
+        cursor: pointer;
+    }
+}
+
+
+
+.lien-tabs-content-wrapper{
+    .right-content-wrapper{
+        .btn{
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+    }
+}

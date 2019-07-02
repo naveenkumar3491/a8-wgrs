@@ -5,8 +5,7 @@ import { MyViewComponent } from "src/app/my-view/my-view.component";
 import { LienViewComponent } from "src/app/my-view/lien-view/lien-view.component";
 
 const routes: Routes = [
-  { path: '', component: MyViewComponent },
-  { path: 'lien-view', component: LienViewComponent }
+  { path: '', redirectTo: 'lien-view/:lienId', pathMatch: 'full' }
 ];
 
 @NgModule({

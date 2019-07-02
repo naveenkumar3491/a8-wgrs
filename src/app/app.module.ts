@@ -8,6 +8,7 @@ import {HttpClientModule } from '@angular/common/http';
 import { MyViewModule } from "src/app/my-view/my-view.module";
 import { CoreModule } from "src/app/core/core.module";
 import { SharedModule } from "src/app/shared/shared.module";
+import { Ng2Storage } from './shared/storage';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { SharedModule } from "src/app/shared/shared.module";
     SharedModule,
     MyViewModule
   ],
-  providers: [],
+  providers: [Ng2Storage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

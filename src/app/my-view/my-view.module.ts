@@ -6,14 +6,18 @@ import { MyViewRoutingModule } from "src/app/my-view/my-view-routing.module";
 import { MyViewComponent } from "src/app/my-view/my-view.component";
 import { AgGridModule } from 'ag-grid-angular';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { LienViewComponent } from "src/app/my-view/lien-view/lien-view.component";
+import { LienTabsComponent } from './lien-tabs/lien-tabs.component';
+import { LienViewComponent } from './lien-view/lien-view.component';
+import { MyViewService } from './my-view.service';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
     declarations: [
     MyViewComponent,
     SearchFilterComponent,
-    LienViewComponent
+    LienViewComponent,
+    LienTabsComponent
   ],
   imports:[
       CommonModule,
@@ -21,9 +25,10 @@ import { LienViewComponent } from "src/app/my-view/lien-view/lien-view.component
       ReactiveFormsModule,
       NgbModule,
       AgGridModule.withComponents([]),
-      MyViewRoutingModule
+      MyViewRoutingModule,
+      CoreModule
   ],
-    providers: []
+    providers: [MyViewService]
 })
 export class MyViewModule{
 
