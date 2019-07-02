@@ -1,0 +1,225 @@
+
+
+<form class="form-group" [formGroup]="searchForm">
+  <div class="d-flex">
+    <div calss="flex-column">
+      <label for="siteId">SITE ID:</label>
+      <div class="input-group">
+        <input type="text" formControlName="siteId" class="form-control">
+      </div>
+      <label for="firstName">FIRST NAME:</label>
+      <div class="input-group">
+        <input type="text" formControlName="firstName" class="form-control">
+      </div>
+      <label for="ssn">SSN:</label>
+      <div class="input-group">
+        <input type="text" formControlName="ssn" class="form-control">
+      </div>
+      <label for="lienType">LIEN TYPE:</label>
+      <div class="input-group">
+        <select type="text" formControlName="lienType" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="Dependent Support">Dependent Support</option>
+          <option value="1" label="Spousal Support">Spousal Support</option>
+          <option value="2" label="Student Loan">Student Loan</option>
+          <option value="3" label="Child Support">Child Support</option>
+          <option value="4" label="Writ of Garnishment">Writ of Garnishment</option>
+          <option value="5" label="Tax Levy">Tax Levy</option>
+          <option value="6" label="Wage Assignment">Wage Assignment</option>
+          <option value="7" label="Bankruptcy">Bankruptcy</option>
+          <option value="8" label="Exception Document">Exception Document</option>
+        </select>
+      </div>
+      <label for="lienType">WORKFLOW STATUS:</label>
+      <div class="input-group">
+        <select type="text" formControlName="lienType" class="form-control">
+        </select>
+      </div>
+    </div>
+
+    <div class="flex-column" >
+      <label for="lienId">LIEN ID:(Case Sensitive):</label>
+      <div class="input-group">
+        <input type="text" formControlName="lienId" class="form-control">
+      </div>
+      <label for="lastName">LAST NAME:</label>
+      <div class="input-group">
+        <input type="text" formControlName="lastName" class="form-control">
+      </div>
+      <label for="caseId">CASE ID:</label>
+      <div class="input-group">
+        <input type="text" formControlName="caseId" class="form-control">
+      </div>
+      <label for="lienSubType">LIEN PRIORITY/SUB TYPE:</label>
+      <div class="input-group">
+        <select formControlName="lienSubType" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="FEDERAL">FEDERAL</option>
+          <option value="1" label="MANDATORY">MANDATORY</option>
+          <option value="2" label="PRIVATE">PRIVATE</option>
+          <option value="3" label="REGULAR">REGULAR</option>
+          <option value="4" label="STATE">STATE</option>
+        </select>
+      </div>
+      <label for="lienSubType">RECORD STATUS:</label>
+      <div class="input-group">
+        <select formControlName="lienSubType" class="form-control">
+          <option value="0" label="ACTIVE">ACTIVE</option>
+          <option value="1" label="DELETE">DELETE</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isAdvancedSearch" class= "pb-3 pt-2">
+    <label>MORE...</label>
+    <i class="fas fa-chevron-circle-down fa-lg" (click)="advancedSearch()"></i>
+  </div>
+  <div *ngIf="isAdvancedSearch" class= "pb-3 pt-2">
+    <label>LESS...</label>
+    <i class="fas fa-chevron-circle-up fa-lg" (click)="advancedSearch()"></i>
+  </div>
+  <div *ngIf="isAdvancedSearch" class="d-flex">
+    <div class="flex-column">
+      <label for="updatedBy">UPDATED BY:</label>
+      <div class="input-group">
+        <input type="text" formControlName="updatedBy" class="form-control">
+      </div>
+      <label for="priority">PRIORITY:</label>
+      <div class="input-group">
+        <select formControlName="priority" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="HOT">HOT</option>
+          <option value="1" label="PASTDUE">PASTDUE</option>
+          <option value="2" label="TODAY">TODAY</option>
+          <option value="3" label="TOMORROW">TOMORROW</option>
+          <option value="4" label="NMI">NMI</option>
+        </select>
+      </div>
+      <label for="originalOrCopy">ORIGINAL/COPY:</label>
+      <div class="input-group">
+        <select formControlName="originalOrCopy" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="ORIGINAL">ORIGINAL</option>
+          <option value="1" label="COPY">COPY</option>
+        </select>
+      </div>
+      <label for="eiwoRecords">eIWO RECORDS:</label>
+      <div class="input-group">
+        <select formControlName="eiwoRecords" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="indexedForm">INDEXED FROM:</label>
+      <div class="input-group">
+        <select formControlName="indexedForm" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="deleteFrom">DELETED FROM:</label>
+      <div class="input-group">
+        <select formControlName="deleteFrom" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="releaseOrder">RELEASE ORDER:</label>
+      <div class="input-group">
+        <select formControlName="releaseOrder" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="branchCode">BRANCH CODE:</label>
+      <div class="input-group">
+        <input formControlName="branchCode" class="form-control">
+      </div>
+      <label for="payrollFileNumber">PAYROLL FILE NUMBER:</label>
+      <div class="input-group">
+        <input formControlName="payrollFileNumber" class="form-control">
+      </div>
+      <label for="deleteCommentCode">DELETE COMMENT CODE:</label>
+      <div class="input-group">
+        <select formControlName="deleteCommentCode" class="form-control">
+        </select>
+      </div>
+    </div>
+    <div class="flex-column">
+      <label for="associateId">ASSOCIATE ID:</label>
+      <div class="input-group">
+        <input type="text" formControlName="associateId" class="form-control">
+      </div>
+      <label for="courtOrderState">COURT ORDER STATE:</label>
+      <div class="input-group">
+        <select formControlName="courtOrderState" class="form-control">
+        </select>
+      </div>
+      <label for="deleteType">DELETE TYPE:</label>
+      <div class="input-group">
+        <select formControlName="deleteType" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="DUPLICATE">DUPLICATE</option>
+          <option value="1" label="SYSTEM">SYSTEM</option>
+          <option value="2" label="MODIFICATION">MODIFICATION</option>
+        </select>
+      </div>
+      <label for="interrogatory">INTERROGATORY:</label>
+      <div class="input-group">
+        <select formControlName="interrogatory" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="indexedTill">INDEXED TILL:</label>
+      <div class="input-group">
+        <select formControlName="indexedTill" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="deleteTill">DELETED TILL:</label>
+      <div class="input-group">
+        <select formControlName="deleteTill" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="needInfo">NEED INFO:</label>
+      <div class="input-group">
+        <select formControlName="needInfo" class="form-control">
+          <option value="" class=""></option>
+          <option value="0" label="YES">YES</option>
+          <option value="1" label="NO">NO</option>
+        </select>
+      </div>
+      <label for="companyCode">COMPANY CODE:</label>
+      <div class="input-group">
+        <input formControlName="companyCode" class="form-control">
+      </div>
+      <label for="adpEmployeeIdentifier">ADP EMPLOYEE IDENTIFIER:</label>
+      <div class="input-group">
+        <input formControlName="adpEmployeeIdentifier" class="form-control">
+      </div>
+      <label for="userId">USER ID:</label>
+      <div class="input-group">
+        <input formControlName="userId" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-center">
+    <div>
+      <button type="submit" [disabled]="loading" class="btn btn-primary mt-1 mr-3 mb-2" (click)="onSubmit()">SEARCH</button>
+    </div>
+    <div>
+      <button class="btn btn-primary mt-1 ml-3 mb-2" (click)="ngOnInit()">CLEAR</button>
+    </div>
+  </div>
+</form>
