@@ -34,6 +34,7 @@ export class MyViewService{
                 this.storage.setSession('lienData', JSON.stringify(this.lienStorageData));
             }
         }else{
+            this.lienStorageData = [];
             this.lienStorageData.push(data);
             this.storage.setSession('lienData', JSON.stringify(this.lienStorageData));
         }

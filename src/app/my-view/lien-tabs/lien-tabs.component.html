@@ -11,116 +11,255 @@
         </a>
     </li>
 </ul> -->
- <div class="lien-tabs-wrapper">
-<ul class="nav nav-tabs px-4 justify-content-md-start justify-content-end">
-    <li *ngFor="let lien of storedLiens" class="nav-item" (click)="setSelectedLien(lien.lienId)">
+<div class="content-wrapper" style="    padding: .5rem 1rem;">
+  <div class="lien-tabs-wrapper">
+    <ul class="nav nav-tabs justify-content-md-start justify-content-end">
+      <li *ngFor="let lien of storedLiens" class="nav-item" (click)="setSelectedLien(lien)">
         <i class="fa fa-times-circle" (click)="removeLienFromStorage(lien)"></i>
-        <a class="nav-link" [ngClass]="{'active': lien.lienId === selectedLienId}"> 
-            <span>{{lien.lienId}}</span> 
-            <span class="tab-text"> {{(lien.recordTypCd=='D' && lien.workflowStatusCode.workflowStatusCode!= 'CO') ? 'Duplicate' : (lien.recordTypCd=='S' && lien.workflowStatusCode.workflowStatusCode!='CO') ? 'System Delete' : lien.recordStatusCode=='D' ? 'Deleted' : ''}}</span>
+        <a class="nav-link" [ngClass]="{'active': lien.lienId === selectedLien.lienId}">
+          <span>{{lien.lienId}}</span>
+          <span class="tab-text"> {{(lien.recordTypCd=='D' && lien.workflowStatusCode.workflowStatusCode!= 'CO') ?
+            'Duplicate' : (lien.recordTypCd=='S' && lien.workflowStatusCode.workflowStatusCode!='CO') ? 'System Delete'
+            : lien.recordStatusCode=='D' ? 'Deleted' : ''}}</span>
         </a>
-    </li>
-</ul>
-</div>
+      </li>
+    </ul>
+  </div>
 
-<div class="lien-tabs-content-wrapper row px-4 d-flex">
-    <div class="left-content-wrapper d-flex col-7">
-        <div class="col">
-            <div class="row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                    </div>
-                  </div>
-                  <div class="row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                        </div>
-                      </div>
-                      <div class="row">
-                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                            </div>
-                          </div>
-                          <div class="row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                </div>
-                              </div>
-                              <div class="row">
-                                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                    <div class="col-sm-10">
-                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                        <div class="col-sm-10">
-                                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                            <div class="col-sm-10">
-                                              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                            </div>
-                                          </div>
-                                          <div class="row">
-                                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="col">
-                                                    <div class="row">
-                                                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                                            <div class="col-sm-10">
-                                                              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                                            </div>
-                                                          </div>
-                                                          <div class="row">
-                                                                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                                                <div class="col-sm-10">
-                                                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                                                </div>
-                                                              </div>
-                                                              <div class="row">
-                                                                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                                                    <div class="col-sm-10">
-                                                                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                                                    </div>
-                                                                  </div>
-                                                                  <div class="row">
-                                                                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                                                        <div class="col-sm-10">
-                                                                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                                                        </div>
-                                                                      </div>
-                                                                      <div class="row">
-                                                                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                                                            <div class="col-sm-10">
-                                                                              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                                                            </div>
-                                                                          </div>
-                                            </div>
-                                            <div class="col"></div>
+  <div class="lien-tabs-content-wrapper row" style="margin: 0 0px 0 0px;
+padding: 10px;
+background-color: #E4E4E4;">
+    <div class="left-content-wrapper d-flex col-8 p-2" style="background-color: #F6F6F6;">
+      <div class="first-wrapper col-4 p-0">
+        <div class="row mb-2">
+          <label class="col-5">Lien Record:</label>
+          <b class="col-7">{{selectedLien.lienId}}</b>
+        </div>
+        <div class="row mb-2">
+          <label class="col-5">Name:</label>
+          <b class="col-7">{{selectedLien.wgsEmployee.firstName | uppercase}} {{selectedLien.wgsEmployee.lastName | uppercase}}</b>
+        </div>
+        <div class="row mb-2">
+          <label class="col-5">Workflow Status:</label>
+          <b class="col-7">{{selectedLien.workflowStatusCode.workflowStatusDesc|uppercase}}</b>
+        </div>
+        <div class="row mb-2">
+          <label class="col-5">Transmission Date:</label>
+          <b class="col-7">{{selectedLien.trnsmDt}}</b>
+        </div>
+        <div class="row mb-2">
+          <label class="col-5">Original Lien:</label>
+          <b class="col-7">{{selectedLien.duplicateOf}}</b>
+        </div>
+        <div class="row mb-2">
+          <label class="col-5">Image Id:</label>
+          <b class="col-7">{{selectedLien.wgsOrder.imageId}}</b>
+        </div>
+        <div class="row mb-2">
+          <label class="col-5">Site ID/Name:</label>
+          <b class="col-7">{{selectedLien.wgsOrder.siteId}}, {{selectedLien.coName}}</b>
+        </div>
+        <div class="row mb-2" *ngIf='selectedLien.ocrSource'>
+            <label class="col-5">OCR Type:</label>
+            <b class="col-7">{{(selectedLien.ocrSource == 'CPTV') ? 'CAPTIVA' : selectedLien.ocrSource}}</b>
+          </div>
+          <div class="row mb-2" *ngIf="selectedLien.wgsOrderLienMappings.length === 0">
+              <label class="col-5">Linked Liens</label>
+              <!-- <select>{{selectedLien.wgsOrderLienMappings}}
+                <ng-template *ngFor="let c of selectedLien.wgsOrderLienMappings">
+                  <option *ngIf="c.linkedLienId" [ngValue]="c">{{c.linkedLienId}}</option>
+                </ng-template>
+                </select> -->
+                <select class="col-4 form-control">
+                      <option *ngFor="let c of selectedLien.wgsOrderLienMappings" [ngValue]="c">{{c.linkedLienId}}</option>
+                    </select>
+                    <i class="fa fa-file"></i>
+                    <i class="fa fa-camera-retro"></i>
+            </div>
+      </div>
+      <div class="second-wrapper col-3">
+        <div class="row mb-2">
+          <label class="col-9">Transmit:</label>
+          <select class="form-control col-3">
+              <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
+          </select>
+        </div>
+        <div class="row mb-2">
+          <label class="col-9">Billable:</label>
+          <select class="form-control col-3">
+              <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
+          </select>
+        </div>
+        <div class="row mb-2">
+          <label class="col-9">Need Info:</label>
+          <select class="form-control col-3">
+              <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
+          </select>
+        </div>
+        <div class="row mb-2">
+          <label class="col-9">Release Order:</label>
+          <select class="form-control col-3">
+              <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
+          </select>
+        </div>
+        <div class="row mb-2">
+          <label class="col-9">Edit to Delete:</label>
+          <input type="checkbox" class="form-control col-3"/>
+        </div>
+      </div>
+      <div class="third-wrapper d-flex col pr-0">
+
+        <div class="text-center">
+          <label>Preview</label>
+          <i class="fas fa-camera-retro fa-2x pl-2"></i>
+        </div>
+        <div class="text-center">
+          <label>Show Letters</label>
+          <i class="fas fa-envelope fa-2x pl-3"></i>
+        </div>
+        <div class="text-center">
+          <label>Tickler Date</label>
+          <i class="fas fa-bell fa-2x btn-btn-primary pl-3"></i>
+        </div>
+        <div class="text-center">
+          <label>Sample Record</label>
+          <i class="fas fa-sync-alt fa-2x pl-1"></i>
+        </div>
+        <div class="text-center">
+          <label>Lock/Unlock to EDIT</label>
+          <a class="fas fa-lock fa-2x" ></a>
+        </div>
+      </div>
     </div>
 
 
 
 
-    <div class="right-content-wrapper col-5">
-            <button class="btn">
-                <i class="fa fa-home"></i>
-                <div class="ir-btn-font">REFRESH</div>
+    <div class="right-content-wrapper col-4">
+      <button class="btn mr-1 mb-1">
+        <i class="fa fa-home"></i>
+        <div class="ir-btn-font">REFRESH</div>
+      </button>
+      <button class="btn mr-1 mb-1">
+          <i class="fa fa-bars"></i>
+          <div class="ir-btn-font">REFRESH</div>
+        </button>
+        <button class="btn mr-1 mb-1">
+            <i class="fa fa-trash"></i>
+            <div class="ir-btn-font">REFRESH</div>
+          </button>
+          <button class="btn mr-1 mb-1">
+              <i class="fa fa-bars"></i>
+              <div class="ir-btn-font">REFRESH</div>
             </button>
-            <!-- <button class="btn"><i class="fa fa-bars"></i></button>
-            <button class="btn"><i class="fa fa-trash"></i></button>
-            <button class="btn"><i class="fa fa-close"></i></button>
-            <button class="btn"><i class="fa fa-folder"></i></button> -->
+            <button class="btn mr-1 mb-1">
+                <i class="fa fa-folder"></i>
+                <div class="ir-btn-font">REFRESH</div>
+              </button>
+              <button class="btn mr-1 mb-1">
+                  <i class="fa fa-home"></i>
+                  <div class="ir-btn-font">REFRESH</div>
+                </button>
+                <button class="btn mr-1 mb-1">
+                    <i class="fa fa-bars"></i>
+                    <div class="ir-btn-font">REFRESH</div>
+                  </button>
+                  <button class="btn mr-1 mb-1">
+                      <i class="fa fa-trash"></i>
+                      <div class="ir-btn-font">REFRESH</div>
+                    </button>
+                    <button class="btn mr-1 mb-1">
+                        <i class="fa fa-bars"></i>
+                        <div class="ir-btn-font">REFRESH</div>
+                      </button>
+                      <button class="btn mr-1 mb-1">
+                          <i class="fa fa-folder"></i>
+                          <div class="ir-btn-font">REFRESH</div>
+                        </button>
+                        <button class="btn mr-1 mb-1">
+                            <i class="fa fa-trash"></i>
+                            <div class="ir-btn-font">REFRESH</div>
+                          </button>
+                          <button class="btn mr-1 mb-1">
+                              <i class="fa fa-bars"></i>
+                              <div class="ir-btn-font">REFRESH</div>
+                            </button>
+                            <button class="btn mr-1 mb-1">
+                                <i class="fa fa-folder"></i>
+                                <div class="ir-btn-font">REFRESH</div>
+                              </button>
     </div>
+  </div>
 </div>
+
+<!-- <div class="d-flex">
+  <div class="flex-column pr-4 p-2">
+  <label>Lien Record:</label>
+  <label>Name:</label>
+  <label>Workflow Status:</label>
+  <label>Transmission Date:</label>
+  <label>Original Lien:</label>
+  <label>Image Id:</label>
+  <label>Site ID/Name</label>
+  </div>
+  <div class="flex-column pl-4 p-2">
+  <label>{{lienId}},{{WorkflowStatus}}</label>
+  <label>DONALD JENNEY</label>
+  <label>PQ UTL COMPLETE</label>
+  <label>06/21/2019</label>
+  <label>Orginal Lien</label>
+  <label>060618WMT1</label>
+  <label>WMT1,WAL-MART STORES,INC</label>
+  </div>
+  <div class="flex-column pt-5 pl-5">
+  <label>Transmit:</label>
+  <label>Billable:</label>
+  <label>Need Info:</label>
+  <label>Release Order:</label>
+  <label>Edit to Delete:</label>
+  </div>
+  <div class="flex-column pt-5 pl-5">
+  <select>
+  <option value="0" label="Yes"></option>
+  <option value="1" label="No"></option>
+  </select>
+  <select>
+  <option value="0" label="Yes"></option>
+  <option value="1" label="No"></option>
+  </select>
+  <select>
+  <option value="0" label="Yes"></option>
+  <option value="1" label="No"></option>
+  </select>
+  <select>
+  <option value="0" label="Yes"></option>
+  <option value="1" label="No"></option>
+  </select>
+  <input type="checkbox">
+  </div>
+  <div class="flex-column pl-5 pt-3">
+  <label>Transmit</label>
+  <i class="fas fa-camera-retro fa-2x pl-2"></i>
+  </div>
+  <div class="flex-column pl-3 pt-3">
+  <label>Show Letters</label>
+  <i class="fas fa-envelope fa-2x pl-3"></i>
+  </div>
+  <div class="flex-column pl-3 pt-3">
+  <label>Tickler Date</label>
+  <i class="fas fa-bell fa-2x btn-btn-primary pl-3"></i>
+  </div>
+  <div class="flex-column pl-3 pt-3">
+  <label>Lock/Unlock to EDIT</label>
+  <div class="d-flex justify-content-center">
+  <a [hidden]="isLocked" class="fas fa-lock fa-2x" (click)="unlock()"></a>
+  <a [hidden]="!isLocked" class="fas fa-lock-open fa-2x" (click)="unlock()"></a>
+  </div>
+  </div>
+  <div class="flex-column pt-5 pl-3">
+  <div class="pt-2 px-3 sync-alt">
+  <i class="fas fa-sync-alt fa-2x pl-1"></i>
+  <label class="flex-column">Refresh</label>
+  </div>
+  </div>
+  </div>  -->

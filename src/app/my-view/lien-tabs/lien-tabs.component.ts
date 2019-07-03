@@ -9,12 +9,13 @@ import { Ng2Storage } from '../../shared/storage';
 })
 export class LienTabsComponent implements OnInit {
   @Input() storedLiens;
-  public selectedLienId;
+  public selectedLien;
+  private ynOptions = ['YES', 'NO'];
   constructor(private myViewService: MyViewService, private storage: Ng2Storage) { }
 
   ngOnInit() {
     console.log(this.storedLiens);
-    this.selectedLienId = this.myViewService.lienStorageData[this.myViewService.lienStorageData.length - 1].lienId;
+    this.selectedLien = this.myViewService.lienStorageData[this.myViewService.lienStorageData.length - 1];
   }
 
   removeLienFromStorage(lienObj: any){
@@ -23,7 +24,7 @@ export class LienTabsComponent implements OnInit {
     this.storage.setSession('lienData', JSON.stringify(this.myViewService.lienStorageData));
   }
 
-  setSelectedLien(lienId){
-    this.selectedLienId = lienId;
+  setSelectedLien(lien){
+    this.selectedLien = lien;
   }
 }
