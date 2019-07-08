@@ -1,2 +1,5 @@
 <wgrs-header></wgrs-header>
-<wgrs-lien-tabs *ngIf="storedLiens" [storedLiens] = "storedLiens"></wgrs-lien-tabs>
+<wgrs-lien-tabs *ngIf="storedLiens" [storedLiens] = "storedLiens" [selectedLien] = "selectedLien"></wgrs-lien-tabs>
+<wgrs-lien-details *ngIf="storedLiens && selectedLien" [selectedLien] = "selectedLien"></wgrs-lien-details>
+
+<wgrs-footer></wgrs-footer>

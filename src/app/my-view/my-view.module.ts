@@ -10,6 +10,7 @@ import { LienTabsComponent } from './lien-tabs/lien-tabs.component';
 import { LienViewComponent } from './lien-view/lien-view.component';
 import { MyViewService } from './my-view.service';
 import { CoreModule } from '../core/core.module';
+import { LienDetailsComponent } from './lien-details/lien-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CoreModule } from '../core/core.module';
     MyViewComponent,
     SearchFilterComponent,
     LienViewComponent,
-    LienTabsComponent
+    LienTabsComponent,
+    LienDetailsComponent
   ],
   imports:[
       CommonModule,

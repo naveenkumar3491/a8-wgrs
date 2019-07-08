@@ -6,7 +6,8 @@
     [pagination]="true"
     [paginationPageSize]="25"
     [rowSelection]="rowSelection"
-    [rowHeight] ="25">
+    [rowHeight] ="25"
+    (rowDoubleClicked)="onRowDoubleClicked($event)" >
 </ag-grid-angular>
 
 <div *ngIf="false" class = "search-filter">

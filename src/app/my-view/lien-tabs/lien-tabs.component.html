@@ -26,44 +26,44 @@
     </ul>
   </div>
 
-  <div class="lien-tabs-content-wrapper row" style="margin: 0 0px 0 0px;
+  <div [ngClass]="{'sticky' : isSticky}" class="lien-tabs-content-wrapper row m-0" style="
 padding: 10px;
 background-color: #E4E4E4;">
     <div class="left-content-wrapper d-flex col-8 p-2" style="background-color: #F6F6F6;">
       <div class="first-wrapper col-4 p-0">
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Lien Record:</label>
           <b class="col-7">{{selectedLien.lienId}}</b>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Name:</label>
           <b class="col-7">{{selectedLien.wgsEmployee.firstName | uppercase}} {{selectedLien.wgsEmployee.lastName | uppercase}}</b>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Workflow Status:</label>
           <b class="col-7">{{selectedLien.workflowStatusCode.workflowStatusDesc|uppercase}}</b>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Transmission Date:</label>
           <b class="col-7">{{selectedLien.trnsmDt}}</b>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Original Lien:</label>
           <b class="col-7">{{selectedLien.duplicateOf}}</b>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Image Id:</label>
           <b class="col-7">{{selectedLien.wgsOrder.imageId}}</b>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-5">Site ID/Name:</label>
           <b class="col-7">{{selectedLien.wgsOrder.siteId}}, {{selectedLien.coName}}</b>
         </div>
-        <div class="row mb-2" *ngIf='selectedLien.ocrSource'>
+        <div class="row mb-1" *ngIf='selectedLien.ocrSource'>
             <label class="col-5">OCR Type:</label>
             <b class="col-7">{{(selectedLien.ocrSource == 'CPTV') ? 'CAPTIVA' : selectedLien.ocrSource}}</b>
           </div>
-          <div class="row mb-2" *ngIf="selectedLien.wgsOrderLienMappings.length === 0">
+          <div class="row mb-1" *ngIf="selectedLien.wgsOrderLienMappings.length === 0">
               <label class="col-5">Linked Liens</label>
               <!-- <select>{{selectedLien.wgsOrderLienMappings}}
                 <ng-template *ngFor="let c of selectedLien.wgsOrderLienMappings">
@@ -78,31 +78,31 @@ background-color: #E4E4E4;">
             </div>
       </div>
       <div class="second-wrapper col-3">
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-9">Transmit:</label>
           <select class="form-control col-3">
               <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
           </select>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-9">Billable:</label>
           <select class="form-control col-3">
               <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
           </select>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-9">Need Info:</label>
           <select class="form-control col-3">
               <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
           </select>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-9">Release Order:</label>
           <select class="form-control col-3">
               <option *ngFor="let c of ynOptions" [ngValue]="c">{{c}}</option>
           </select>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-1">
           <label class="col-9">Edit to Delete:</label>
           <input type="checkbox" class="form-control col-3"/>
         </div>

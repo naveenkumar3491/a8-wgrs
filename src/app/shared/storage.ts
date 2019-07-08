@@ -20,7 +20,7 @@ export class Ng2Storage{
         this.sessionStore.clear();
     }
 
-    public setLocalStorage(key:string, val:object){
+    public setLocalStorage(key:string, val:any){
         var value = JSON.stringify(val);
         this.localStore.setItem(key,value);
     }

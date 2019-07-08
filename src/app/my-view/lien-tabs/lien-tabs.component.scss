@@ -1,4 +1,12 @@
+.content-wrapper{
+    .sticky {
+        position: fixed;
+        top: 0px;
+        margin: 0px -15px !important;
+        z-index: 1;
+      }
 .lien-tabs-wrapper{
+    border-bottom: 4px solid #28a745;
     .nav-item{
         position: relative;
         i{
@@ -55,4 +63,5 @@
         }
         
     }
+}
 }

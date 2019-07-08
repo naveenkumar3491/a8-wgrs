@@ -20,9 +20,9 @@ import { Ng2Storage } from './shared/storage';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    CoreModule,
     SharedModule,
-    MyViewModule
+    MyViewModule,
+    CoreModule
   ],
   providers: [Ng2Storage],
   bootstrap: [AppComponent]
