@@ -9,6 +9,7 @@ import { MyViewModule } from "src/app/my-view/my-view.module";
 import { CoreModule } from "src/app/core/core.module";
 import { SharedModule } from "src/app/shared/shared.module";
 import { Ng2Storage } from './shared/storage';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Ng2Storage } from './shared/storage';
     BrowserAnimationsModule,
     SharedModule,
     MyViewModule,
-    CoreModule
+    CoreModule,
+    LoadingBarHttpClientModule
   ],
   providers: [Ng2Storage],
   bootstrap: [AppComponent]

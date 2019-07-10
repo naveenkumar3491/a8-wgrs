@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { SearchFilterService } from './search-fliter.service';
+import { CommonService } from '../../shared/common.service';
 
 @Component({
   selector: 'app-search-filter',
@@ -12,72 +14,53 @@ export class SearchFilterComponent implements OnInit {
   submitted = false;
   loading = false;
   isAdvancedSearch = false;
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient
-  ) { }
+  constructor(private formBuilder: FormBuilder, private searchFilterService: SearchFilterService, private commonService: CommonService) { }
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
-      siteId:[''],
-      lienId:[''],
-      firstName:[''],
-      lastName:[''],
-      ssn:[''],
-      caseId:[''],
-      lienType:[''],
-      lienSubType:[''],
-      wrokFlowStatus:[''],
-      recordStatus:[''],
-      updatedBy:[''],
-      associateId:[''],
-      priority:[''],
-      courtOrderState:[''],
-      originalOrCopy:[''],
-      deleteType:[''],
-      eiwoRecords:[''],
-      interrogatory:[''],
-      indexedForm:[''],
-      indexedTill:[''],
-      deleteFrom:[''],
-      deleteTill:[''],
-      releaseOrder:[''],
-      needInfo:[''],
-      branchCode:[''],
-      companyCode:[''],
-      payrollFileNumber:[''],
-      adpEmployeeIdentifier:[''],
-      deleteCommentCode:[''],
-      userId:['']
+      siteId: [''],
+      lienId: [''],
+      firstName: [''],
+      lastName: [''],
+      ssn: [''],
+      caseId: [''],
+      lienType: [''],
+      lienSubType: [''],
+      wrokFlowStatus: [''],
+      recordStatus: [''],
+      updatedBy: [''],
+      associateId: [''],
+      priority: [''],
+      courtOrderState: [''],
+      originalOrCopy: [''],
+      deleteType: [''],
+      eiwoRecords: [''],
+      interrogatory: [''],
+      indexedForm: [''],
+      indexedTill: [''],
+      deleteFrom: [''],
+      deleteTill: [''],
+      releaseOrder: [''],
+      needInfo: [''],
+      branchCode: [''],
+      companyCode: [''],
+      payrollFileNumber: [''],
+      adpEmployeeIdentifier: [''],
+      deleteCommentCode: [''],
+      userId: ['']
     });
   }
 
   onSubmit() {
     this.submitted = true;
-    this.loading = true;
     if (this.searchForm.invalid) {
       this.loading = false;
       return;
     }
-    this.getGridData(this.searchForm);
-  }
-
-  getGridData(value: any){
-    let jsonBody = {
-      pageStartIndex: "0",
-      getLiensFromGSISalso: "true",
-      loggedInUser : 'fn100',
-      queryParameters: {
-        lienSearchInd: 'Y',
-       }
-    }
-    // this.http.post('https://avsintra-fit1.avs.oneadp.com/WGSUI/services/lienWebService/liensearch',jsonBody).subscribe((data) => {
-    //   console.log(data);
-    // });
-  }
-
-  advancedSearch() {
-    this.isAdvancedSearch = !this.isAdvancedSearch;
+    this.searchFilterService.getGridData(this.searchForm.value).subscribe(data => {
+      this.commonService.loadGridData.emit(data.data);
+      this.commonService.showSearchFilter.emit(false);
+    })
   }
 
 }

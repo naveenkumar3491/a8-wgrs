@@ -17,7 +17,7 @@ export class LienViewComponent implements OnInit {
 
   ngOnInit() {
     
-    this.commonService.loginUser().subscribe(userData => {
+    this.commonService.getUserProfile().subscribe(userData => {
       console.log(userData);
       this.lienId = this.route.snapshot.paramMap.get("lienId");
       this.myViewService.getLienDetails({lienId:this.lienId, loggedInUser:"fn100"}).subscribe(data => {

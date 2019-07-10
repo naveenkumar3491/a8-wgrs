@@ -72,11 +72,11 @@
   </div>
   <div *ngIf="!isAdvancedSearch" class= "pb-3 pt-2">
     <label>MORE...</label>
-    <i class="fas fa-chevron-circle-down fa-lg" (click)="advancedSearch()"></i>
+    <i class="fas fa-chevron-circle-down fa-lg c-p" (click)="isAdvancedSearch = !this.isAdvancedSearch;"></i>
   </div>
   <div *ngIf="isAdvancedSearch" class= "pb-3 pt-2">
     <label>LESS...</label>
-    <i class="fas fa-chevron-circle-up fa-lg" (click)="advancedSearch()"></i>
+    <i class="fas fa-chevron-circle-up fa-lg c-p" (click)="isAdvancedSearch = !this.isAdvancedSearch;"></i>
   </div>
   <div *ngIf="isAdvancedSearch" class="d-flex">
     <div class="flex-column">

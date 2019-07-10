@@ -11,6 +11,7 @@ import { LienViewComponent } from './lien-view/lien-view.component';
 import { MyViewService } from './my-view.service';
 import { CoreModule } from '../core/core.module';
 import { LienDetailsComponent } from './lien-details/lien-details.component';
+import { SearchFilterService } from './search-filter/search-fliter.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { LienDetailsComponent } from './lien-details/lien-details.component';
       MyViewRoutingModule,
       CoreModule
   ],
-    providers: [MyViewService]
+    providers: [MyViewService, SearchFilterService]
 })
 export class MyViewModule{
 
